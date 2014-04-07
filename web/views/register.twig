@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация Newbie</title>
+</head>
+<body>
+	<h1>Зарегистрируйся!</h1>
+	<!- Тут пишется статус формы после ее загрузки - ошибки (типа короткий пароль или юзер существует) или информирует об успехе ->
+	{% if error == "Success" %}
+	
+		<p>Поздравляем, Вы зарегистрированы в нашем сервисе.<br>После проверки учетной записи, Вам будет предоставлен доступ в админку.<br>Админка располагается по адресу: <a href="{{ app.url_generator.generate('admin') }}">{{ app.url_generator.generate('admin') }}</a></p>
+	
+	{% else %}
+	
+		<form action="{{ app.url_generator.generate('registration') }}" method="post">
+		{{ error }} 
+		{{ form_widget(form.username) }}
+		{{ form_widget(form.password) }}
+	    {{ form_rest(form) }}
+		<input type="submit" name="submit" class="btn btn-warning" style="margin-top:30px;" value="Регистрация">
+	
+	{% endif %}
+	
+	
+</body>
+</html>

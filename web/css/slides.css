@@ -1,0 +1,198 @@
+.slider-wrapper{
+	position: relative;
+	margin: 0 auto;
+}
+.aboutCompanyWrapper{
+	width: 960px;
+	margin-top: 49px;
+	margin-bottom: 55px;
+	padding-top: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
+	background-color: #fff;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+	width: 835px; /* img width * elems at once */
+	margin: 0 auto;
+}
+.aboutCompany{ /*overwrite .jcarousel styles*/
+	width: 960px;
+}
+.jcarousel ul {
+    width: 20000px; /*replace with js eval */
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.jcarousel li {
+    float: left;
+    width: 147px;
+    height: 67px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.jcarousel li a{
+	display: inline-block;
+	width: 147px;
+	height: 67px;
+	}
+.aboutCompany li{ /*overwrite .jcarousel li styles*/
+	width: 310px;
+	height: auto;
+	margin-left: 8px;
+	margin-right: 8px;
+}
+.aboutCompany li a{
+	min-width: 310px;
+	min-height: 206px;
+	}
+.jcarousel img{
+	vertical-align: bottom;
+}
+.aboutCompany img{ /*overwrite .jcarousel img styles*/
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;	
+}
+.aboutCompany p{
+	margin-top: 22px;
+	margin-bottom: 13px;
+	font-size: 16px;
+	color: #434343;
+	font-family: 'PT Sans', sans-serif;
+	line-height: 21px;
+}
+.aboutCompanyPagination{
+	width: 1020px;
+	height: 67px;
+	margin-left: -30px;
+	-webkit-border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;
+	border-bottom: 3px solid #e1e2e7;
+	background-color: #f6f8fa;
+	text-align: center;
+}
+.aboutCompanyPagination:after{
+	content: '';
+	height: 67px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.aboutCompanyPagination a{
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 8px;
+	width: 8px;
+	height: 8px;
+	background: url(../img/sprites.png) center center no-repeat;
+	background-position: -230px -232px;
+}
+.aboutCompanyPagination .active{
+	background-position: -205px -231px;
+}
+.aboutControl{
+	position: absolute;
+	text-decoration: none;
+	top: 310px;
+	height: 26px;
+	width: 26px;
+	background: url(../img/sprites.png) center center no-repeat;
+}
+.aboutControl.jcarousel-prev{
+	left: 30px;
+	background-position: -159px -262px;
+
+}
+.aboutControl.jcarousel-prev:hover{
+	background-position: -58px -262px;
+}
+.aboutControl.jcarousel-next{
+	right: 30px;
+	background-position: -211px -262px;
+}
+.aboutControl.jcarousel-next:hover{
+	background-position: -107px -263px;
+}
+.astra_logo{
+	background: url("../img/slides/astra.png") 0 0 no-repeat;
+}
+.astra_logo:hover{
+	background: url("../img/slides/astra-hover.png") 0 0 no-repeat;
+}
+.epic_logo{
+	background: url("../img/slides/epic.png") 0 0 no-repeat;
+}
+.epic_logo:hover{
+	background: url("../img/slides/epic-hover.png") 0 0 no-repeat;
+}
+.kelnik_logo{
+	background: url("../img/slides/kelnik.png") 0 0 no-repeat;
+}
+.kelnik_logo:hover{
+	background: url("../img/slides/kelnik-hover.png") 0 0 no-repeat;
+}
+.lead-zeppelin_logo{
+	background: url("../img/slides/lead-zeppelin.png") 0 0 no-repeat;
+}
+.lead-zeppelin_logo:hover{
+	background: url("../img/slides/lead-zeppelin-hover.png") 0 0 no-repeat;
+}
+.legion_logo{
+	background: url("../img/slides/legion.png") 0 0 no-repeat;
+}
+.legion_logo:hover{
+	background: url("../img/slides/legion-hover.png") 0 0 no-repeat;
+}
+.nimax_logo{
+	background: url("../img/slides/nimax.png") 0 0 no-repeat;
+}
+.nimax_logo:hover{
+	background: url("../img/slides/nimax-hover.png") 0 0 no-repeat;
+}
+.sereniti_logo{
+	background: url("../img/slides/sereniti.png") 0 0 no-repeat;
+}
+.sereniti_logo:hover{
+	background: url("../img/slides/sereniti-hover.png") 0 0 no-repeat;
+}
+.spetsia_logo{
+	background: url("../img/slides/spetsia.png") 0 0 no-repeat;
+}
+.spetsia_logo:hover{
+	background: url("../img/slides/spetsia-hover.png") 0 0 no-repeat;
+}
+.shishki_logo{
+	background: url("../img/slides/shishki.png") 0 0 no-repeat;
+}
+.shishki_logo:hover{
+	background: url("../img/slides/shishki-hover.png") 0 0 no-repeat;
+}
+.footer-arrow-left, .footer-arrow-right {
+	position: absolute;
+	top: 30px;
+	display: block;
+	background-image: url(../img/sprites.png);
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    width: 7px;
+	height: 9px;
+	text-decoration: none;
+}
+.footer-arrow-left {
+    background-position: -216px -157px ;
+    left: 20px;
+}
+
+.footer-arrow-right {
+	background-position: -234px -177px ;
+	right: 20px;
+}
+

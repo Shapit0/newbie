@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{{ v.title }} в компанию {{ v.comptitle }}</title>
+		 <meta name="description" content="{{ v.description }}"> 
+	    {% include 'blocks/head.twig' %}       
+	</head>
+	<body>
+    	
+<div class="container">
+	{% include 'blocks/header-stripe.twig' %}
+
+	{% include 'blocks/menu.twig' %} 
+  			
+	<div class="background">
+	    <div class="wrapper_sp">
+	        <div class="row row_sp_header">
+	            <div class="column sp_company">
+	                <img src="/web/logos/{{ v.complogo }}" class="sp_logo">
+	                <a href="{{ v.compurl }}">{{ v.compurl }}</a>
+	            </div>
+	            <div class="column sp_vacancy">
+	                <h1>{{ v.title }}</h1>
+	                <p>{{ v.description }}</p>
+	            </div>
+	        </div>
+	        <div class=" row row_sp_summary">
+	            <div class="column sum sum_profession">
+	                <span class="icon_profession"></span>
+	                <p>{{ v.type }}</p>
+	            </div>
+	            <div class="column sum sum_duration">
+	                <span class="icon_duration"></span>
+	                <p>С {{ v.start }}</p>
+	            </div>
+	            <div class="column sum sum_salary">
+	                <span class="icon_salary"></span>
+	                <p>{{ v.salary }} р.</p>
+	            </div>
+	        </div>
+	        <div class="row row_sp_jd">
+	            <div class="column jd_logo"></div> 
+	            <div class="column jd">
+	                <h2>Обязанности</h2>
+	                <ul>
+	                {% for req in requirements %}
+	                	<li><p>{{ req | raw }}</p></li>
+	                {% endfor %}
+	                </ul>
+	            </div>
+	        </div>
+	        <div class="row row_sp_requirements">
+	             <div class="column req_logo"></div> 
+	            <div class="column requirements">
+	                <h2>Требования</h2>
+	                <ul>
+	                {% for char in charges %}
+	                	<li><p>{{ char | raw }}</p></li>
+	                {% endfor %}
+	                </ul>
+	            </div>
+	        </div>
+	            <div class="row row_terms">
+	             <div class="column term_logo"></div> 
+	            <div class="column term">
+	                <h2>Условия</h2>
+	                <ul>
+	                {% for cond in conditions %}
+	                	<li><p>{{ cond }}</p></li>
+	                {% endfor %}
+	                </ul>	                
+	            </div>
+	        </div>
+	        <div class="row row-tutor">
+	            <div class="column tutor_photo" style="background-image: url('/web/img/{{ v.mentor_photo }}');"></div>
+	            <div class="column tutor_description">
+	                <h2 class="h2_tutor">{{ v.mentor_name }}</h2>
+	                <div class="tutor_message">
+	                    {{ v.mentor_comment}}
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+            <div class="slider-wrapper aboutCompanyWrapper">
+        <div class="jcarousel aboutCompany" id="aboutGallery">
+            <ul class="gallery">
+                <li><a href="#"><img src="/web/img/slides/1.png" width=310 alt="Ф"></a><p>Отдел веб-дизайна</p></li>
+                <li><a href="#"><img src="/web/img/slides/2.png" width=310 alt="Ф"></a><p>Рабочее место стажера</p></li>
+                <li><a href="#"><img src="/web/img/slides/3.png" width=310 alt="Ф"></a><p>Команда</p></li>
+                <li><a href="#"><img src="/web/img/slides/4.png" width=310 alt="Ф"></a><p>Отдел веб-дизайна</p></li>
+                <li><a href="#"><img src="/web/img/slides/5.png" width=310 alt="Ф"></a><p>Рабочее место стажера</p></li>
+                <li><a href="#"><img src="/web/img/slides/1.png" width=310 alt="Ф"></a><p>Команда</p></li>
+                <li><a href="#"><img src="/web/img/slides/2.png" width=310 alt="Ф"></a><p>Отдел веб-дизайна</p></li>
+                <li><a href="#"><img src="/web/img/slides/3.png" width=310 alt="Ф"></a><p>Рабочее место стажера</p></li>
+                <li><a href="#"><img src="/web/img/slides/4.png" width=310 alt="Ф"></a><p>Команда</p></li>
+            </ul>
+        </div>
+        <a class="aboutControl jcarousel-prev" href=""></a>
+        <a class="aboutControl jcarousel-next" href=""></a>
+        <div class="jcarousel-pagination aboutCompanyPagination">
+        <!-- Pagination items will be generated in here -->
+        </div>
+    </div>   
+	
+	    <div class="wrapper_sp">
+	        <div class="row send-form">
+	            <div class="column column_send_details">
+	                <h2>Отправить заявку на стажировку</h2>
+	                <p>Чтобы попасть на стажировку, нужно успешно выполнить тестовое задание и вовремя загрузить его.</p>
+	                <p>1.<a href="">Скачать тестовое задание</a></p> 
+	                <p>2.Загрузить выполненное тестовое задание в формате и размере, <br/>указанном в задании</p>
+	                <div class="upload">Загрузить</div>
+	             </div>
+
+             <div class="column column_share">
+                 <div class="row share_text">
+                     <p>Расскажи о стажировке друзьям</p>
+                 </div>
+                 
+                 <a href="">
+	                 <div class="column col_twitter">
+	                 <div class="row share_buttons">
+	                      <span></span>
+	                      <p>Tweet</p>
+	                  </div>
+                  </a>
+                  
+                  <a href=""><div class="column col_fb">                      
+                      <span></span>
+                      <p>Like</p>
+                      </div>
+                  </a>
+	
+                  <a href=""><div class="column col_vk">
+	                   <span></span>
+	                   <span></span>	
+	                   </div>
+	              </a>
+             </div>
+         </div>
+     </div> 
+</div>
+
+</div>
+
+
+
+
+	{% include 'blocks/footer.twig' %}
+
+
+
+
+
+
+<!--   HIDDEN FORM SEND APPLICATION    --> 
+
+<div class="background">
+
+    <div class="wrapper_sp"> 
+
+        <div class="send_form">
+
+            
+
+                 <form action="">
+          
+                   <h3>Оставьте заявку на стажировку</h3>
+
+                   <p>Ваше имя и фамилия</p>
+
+                   <input type="text">
+
+                   <p>Номер телефона</p>
+
+                   <input type="text">
+
+                   <p>E-mail</p>
+
+                   <input type="text">
+
+                   <p>Ваше сообщение</p>
+
+                   <input type="text" class="input_message">
+
+                   
+
+                  <input id="uploadFile"  class="custom_upload" disabled="disabled" />
+
+
+                     <!--  button clip  -->
+
+                   <a href="">
+
+                        <div class="clip">
+
+                            <span></span>
+
+                        </div>
+
+                   </a>
+
+                    <div class="fileUpload btn btn-primary">
+
+
+                   
+                     <input id="uploadBtn" type="file" class="form_upload" />
+                    </div>
+
+
+                   <input type="submit" value="Отправить" class="input_submit">
+
+
+
+                 </form>
+
+          
+
+        </div>
+     </div>
+</div>
+
+
+
+
+<!-- APPLICATION SENT --> 
+
+
+<div class="background ">
+
+    <div class="wrapper_sp">
+
+         <div class="send_form_done">
+                  
+                 <p>Ваше сообщение отправлено. Ждите новостей!</p>
+
+         </div>
+
+         <p class="send_another">Отправить еще одно сообщение</p>
+
+    </div>
+
+</div>
+
+ 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="/web/scripts/jquery.leanModal.min.js"></script>
+    <script src="/web/scripts/jcarousel.js"></script>
+    <script src="/web/scripts/main.js"></script>
+    </body>
+</html>

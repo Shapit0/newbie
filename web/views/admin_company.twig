@@ -1,0 +1,23 @@
+{% if id != "" %}
+	<h1>Изменение информации о компании</h1>
+{% else %}
+	<h1>Добавление новой компании</h1>
+{% endif %}
+
+<form action="{{ app.url_generator.generate('admin_company') }}" {{ form_enctype(form) }} method="post">
+	<p>Название:</p>
+	{{ form_widget(form.title) }}
+	<p>Логотип компании:<br>{{ logo_required }}</p>
+	{{ form_widget(form.logo) }}
+	<p>Выбор станции метро:</p>
+	{{ form_widget(form.metro_id) }}
+	<p>URL сайта компании:</p>
+	{{ form_widget(form.url) }}
+	{{ form_rest(form) }}		
+	<input type="submit" name="submit" />
+</form>
+
+<h2>Список существующих компаний</h2>
+{% for c in companies %}
+	<img src="/web/logos/{{ c.logo }}" style="max-width: 100px;">{{ c.title }} <a href="{{ app.url_generator.generate('admin_company') }}/{{ c.id }}">Редактировать</a> <a href="{{ app.url_generator.generate('admin_company') }}/{{ c.id }}-kill">Удалить</a> <br>
+{% endfor %}
