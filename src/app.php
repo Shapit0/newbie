@@ -1,4 +1,4 @@
-<? 
+<?
 
 require_once __DIR__.'/../vendor/autoload.php';
 require_once __DIR__.'/../src/UserProvider.php';
@@ -45,26 +45,14 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
 
 $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     'security.firewalls' => array(
-    	'index' => array(
-                'pattern' => '^$',
-                'anonymous' => true,
-        ),     
-    	'vacancy' => array(
-                'pattern' => '^vacancy/.*$',
-                'anonymous' => true,
-	    ),     
-     	'login' => array(
-                'pattern' => '^/login.*$',
-                'anonymous' => true,
-	    ),         
         'secured' => array(
-            'pattern' => '^/admin1/.*$',
+            'pattern' => '^/admin/.*$',
             'form' => array('login_path' => '/login', 'check_path' => '/admin/login_check'),
             'logout' => array('logout_path' => '/logout'),
             'users' => $app->share(function () use ($app) {
                       return new UserProvider($app['db']);
                  }),
-         ),    
+         ),
     ),
 ));
 
